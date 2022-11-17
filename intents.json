@@ -1,0 +1,63 @@
+{   
+    "intents":[
+        {
+            "tag":"greetings",
+            "patterns":[ "hello","hi","hey","wake up"
+
+            ],
+            "responses":["Hello sir","how are you sir","always there for you sir","hii","hello sir how can I help you"
+
+            ]
+        },
+        {
+            "tag":"bye",
+            "patterns":[ "by","good bye","see you later","sleep"," exit"
+
+            ],
+            "responses":["bye sir","See you later sir","Thank you for your time","Hope you liked my services","It will be nice to meet you again",
+            "sayonara"
+
+            ]
+        },
+        {
+            "tag":"status",
+            "patterns":[ "how are you","how","are you fine","how is your health","are you all right"
+
+            ],
+            "responses":["fine","I am always healthy","cool ","perfect","Trying to figure out why the hell I am obeying you        its a joke","I am fine how about you"
+
+            ]
+        },
+        {
+            "tag":"about",
+            "patterns":[ "who you","who are you"
+
+            ],
+            "responses":[" My name is alpha and I am A virtual asssistance whoes sole perpose is to serve you "
+ 
+            ]
+        }
+       
+
+
+
+    ]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
