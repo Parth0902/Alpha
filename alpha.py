@@ -52,9 +52,6 @@ def Main():
                     talk(reply)
                     exit()
                 else:
-                 talk(reply)
-
-
-    
+                 talk(reply)            
 
 Main()
