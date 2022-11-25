@@ -4,6 +4,7 @@ import torch
 from brain import NeuralNet
 from nn import bag_of_words,tokenize
 
+
 device= torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 with open("intents.json",'r') as json_data:
     intents=json.load(json_data)
@@ -26,7 +27,7 @@ Name="alpha"
 from listen import listen
 from talk import talk
 from working import nonINputExecution
-
+from working import InputExecution
 def Main():
     sentence = listen()
 
@@ -57,6 +58,10 @@ def Main():
                     nonINputExecution(reply)
                 elif "day" in reply:
                     nonINputExecution(reply)
+                elif "wikipedia" in reply:
+                    InputExecution(reply,sentence)
+                elif "what is" in reply or "who is" in reply:
+                    InputExecution(reply,sentence)
                 elif "bye" in reply:
                      talk(reply)
                      exit()

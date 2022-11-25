@@ -317,6 +317,30 @@
             "responses": [
                 "day"
             ]
+        },
+        {
+            "tag": "wikipedia",
+            "patterns": [
+              
+              "tell me about",
+              
+              "wikipedia"
+
+            ],
+            "responses": [
+                "wikipedia"
+            ]
+        },
+        {
+            "tag": "wolframalpha",
+            "patterns": [
+              "what is",
+              "who is"
+
+            ],
+            "responses": [
+                "wikipedia"
+            ]
         }
         
     ]
