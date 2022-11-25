@@ -55,6 +55,11 @@ def Main():
                     nonINputExecution(reply)
                 elif "date" in reply:
                     nonINputExecution(reply)
+                elif "day" in reply:
+                    nonINputExecution(reply)
+                elif "bye" in reply:
+                     talk(reply)
+                     exit()
                 else:
                  talk(reply)            
 
