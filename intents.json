@@ -22,7 +22,8 @@
                 "Hello",
                 "Good day",
                 "Namaste",
-                "yo"
+                "yo",
+                "alpha"
             ],
             "responses": [
                 "Hello",
@@ -129,7 +130,7 @@
                 "what are you"
             ],
             "responses": [
-                "I am Ted, a Deep-Learning chatbot"
+                "I am Alpha, a Deep-Learning chatbot"
             ]
         },
         {
@@ -173,17 +174,7 @@
                 "Glad I could make you laugh !"
             ]
         },
-        {
-            "tag": "programmer",
-            "patterns": [
-                "Who made you",
-                "who designed you",
-                "who programmed you"
-            ],
-            "responses": [
-                "I was made by Karan Malik."
-            ]
-        },
+      
         {
             "tag": "insult",
             "patterns": [
@@ -218,17 +209,7 @@
                 "Yeah!"
             ]
         },
-        {
-            "tag": "weather",
-            "patterns": [
-                "temperature",
-                "weather",
-                "how hot is it"
-            ],
-            "responses": [
-                "..."
-            ]
-        },
+      
         {
             "tag": "appreciate",
             "patterns": [
@@ -261,38 +242,7 @@
                 "ok"
             ]
         },
-        {
-            "tag": "news",
-            "patterns": [
-                "news",
-                "latest news",
-                "india news"
-            ],
-            "responses": [
-                "..."
-            ]
-        },
-        {
-            "tag": "inspire",
-            "patterns": [
-                "who inspires you",
-                "who is your inspiration",
-                "who motivates you"
-            ],
-            "responses": [
-                "Personally, I find Parth very inspiring. I might not be very fair though.."
-            ]
-        },
-        {
-            "tag": "cricket",
-            "patterns": [
-                "current cricket matches",
-                "cricket score"
-            ],
-            "responses": [
-                "..."
-            ]
-        },
+       
         {
             "tag": "song",
             "patterns": [
@@ -328,28 +278,8 @@
                 "..."
             ]
         },
-        {
-            "tag": "covid19",
-            "patterns": [
-                "covid 19 "
-            ],
-            "responses": [
-                "..."
-            ]
-        },
-        {
-            "tag": "suggest",
-            "patterns": [
-                "you are useless",
-                "useless",
-                "suggest",
-                "suggestions",
-                "you are bad"
-            ],
-            "responses": [
-                "Please mail your suggestions to ted.thedlbot.suggestions@gmail.com. Thank you for helping me improve!"
-            ]
-        },
+     
+      
         {
             "tag": "riddle",
             "patterns": [
@@ -382,6 +312,30 @@
             "responses": [
                 "I was made in 2020, if that's what you are asking!"
             ]
+        },
+        {
+            "tag": "date",
+            "patterns": [
+                "date",
+                "todays date",
+                "what is todays date"
+            ],
+            "responses": [
+                "date"
+            ]
         }
+        ,
+        {
+            "tag": "time",
+            "patterns": [
+                "time",
+                "Whats the time "
+                
+            ],
+            "responses": [
+                "time"
+            ]
+        }
+        
     ]
 }

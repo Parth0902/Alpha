@@ -25,6 +25,8 @@ model.eval()
 Name="alpha"
 from listen import listen
 from talk import talk
+from working import nonINputExecution
+
 def Main():
     sentence = listen()
 
@@ -48,10 +50,12 @@ def Main():
         for intent in intents['intents']:
             if tag==intent["tag"]:
                 reply=random.choice(intent["responses"])
-                if sentence == "bye":
-                    talk(reply)
-                    exit()
+                if "time" in reply:
+                    nonINputExecution(reply)
+                elif "date" in reply:
+                    nonINputExecution(reply)
                 else:
                  talk(reply)            
 
-Main()
+while(True):
+    Main()
