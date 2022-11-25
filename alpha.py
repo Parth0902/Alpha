@@ -50,6 +50,7 @@ def Main():
         for intent in intents['intents']:
             if tag==intent["tag"]:
                 reply=random.choice(intent["responses"])
+               
                 if "time" in reply:
                     nonINputExecution(reply)
                 elif "date" in reply:
