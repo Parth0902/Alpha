@@ -30,8 +30,8 @@ from working import nonINputExecution
 from working import InputExecution
 def Main():
     sentence = listen()
-
- 
+    result=str(sentence)
+  
     sentence=tokenize(sentence)
     X=bag_of_words(sentence,all_words)
     X=X.reshape(1,X.shape[0])
@@ -51,22 +51,31 @@ def Main():
         for intent in intents['intents']:
             if tag==intent["tag"]:
                 reply=random.choice(intent["responses"])
-               
-                if "time" in reply:
+                if "stop" in sentence:
+                     
+                     exit()
+                elif "time" in reply:
                     nonINputExecution(reply)
                 elif "date" in reply:
                     nonINputExecution(reply)
                 elif "day" in reply:
                     nonINputExecution(reply)
+                elif "note" in reply:
+                    nonINputExecution(reply)
+                elif "showNote" in reply:
+                    nonINputExecution(reply)
                 elif "wikipedia" in reply:
-                    InputExecution(reply,sentence)
-                elif "what is" in reply or "who is" in reply:
-                    InputExecution(reply,sentence)
-                elif "bye" in reply:
-                     talk(reply)
-                     exit()
+                    InputExecution(reply,result)
+                
+                elif "google" in reply:
+                    InputExecution(reply,result)
+                
+                
+
+                     
                 else:
                  talk(reply)            
 
 while(True):
+    
     Main()

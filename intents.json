@@ -1,16 +1,6 @@
 {
     "intents": [
-        {
-            "tag": "google",
-            "patterns": [
-                "google",
-                "search",
-                "internet"
-            ],
-            "responses": [
-                "Redirecting to Google..."
-            ]
-        },
+    
         {
             "tag": "greeting",
             "patterns": [
@@ -100,7 +90,7 @@
                 "What did the traffic light say to the car? \"Don't look now, I'm changing.\"",
                 "What do you call a snowman with a suntan? A puddle.",
                 "How does a penguin build a house? Igloos it together",
-                "I went to see the doctor about my short-term memory problems – the first thing he did was make me pay in advance",
+                "I went to see the doctor about my short-term memory problems the first thing he did was make me pay in advance",
                 "As I get older and I remember all the people I’ve lost along the way, I think to myself, maybe a career as a tour guide wasn’t for me.",
                 "o what if I don't know what 'Armageddon' means? It's not the end of the world."
             ],
@@ -319,11 +309,34 @@
             ]
         },
         {
+            "tag": "note",
+            "patterns": [
+              "note",
+              "write a note"
+
+            ],
+            "responses": [
+                "note"
+            ]
+        },
+        {
+            "tag": "Shownote",
+            "patterns": [
+              "show note",
+              "show a note",
+              "open note"
+
+            ],
+            "responses": [
+                "showNote"
+            ]
+        },
+        {
             "tag": "wikipedia",
             "patterns": [
-              
+              "who is",
               "tell me about",
-              
+              "what is",
               "wikipedia"
 
             ],
@@ -331,15 +344,18 @@
                 "wikipedia"
             ]
         },
+        
         {
-            "tag": "wolframalpha",
+            "tag": "google",
             "patterns": [
-              "what is",
-              "who is"
+              "google search",
+              "google",
+              "search"
+              
 
             ],
             "responses": [
-                "wikipedia"
+                "google"
             ]
         }
         
