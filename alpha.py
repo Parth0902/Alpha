@@ -6,6 +6,7 @@ from nn import bag_of_words,tokenize
 
 
 device= torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+
 with open("intents.json",'r') as json_data:
     intents=json.load(json_data)
 
@@ -51,6 +52,7 @@ def Main():
         for intent in intents['intents']:
             if tag==intent["tag"]:
                 reply=random.choice(intent["responses"])
+                
                 if "stop" in sentence:
                      
                      exit()

@@ -38,15 +38,18 @@ for (pattern_sentence,tag)in xy:
     label=tags.index(tag)
     y_train.append(label)
 
+
 x_train=np.array(x_train)
 y_train=np.array(y_train)
 
 num_apochs=1000
 batch_size=8
 lerarning_rate=0.001
+print(len(x_train[0]))
 input_size=len(x_train[0])
 hidden_size=8
 output_size=len(tags)
+print(len(tags))
     
 print("training the Model")
 
