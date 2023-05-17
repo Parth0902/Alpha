@@ -5,6 +5,9 @@ import torch.nn as nn
 from torch.utils.data import Dataset,DataLoader
 from nn import bag_of_words, tokenize, stem
 from brain import NeuralNet
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.metrics import precision_recall_fscore_support
 
 with open('intents.json','r') as f:
     intents=json.load(f)
@@ -21,6 +24,7 @@ for intent in intents['intents']:
         w = tokenize(pattern)
         all_words.extend(w)
         xy.append((w,tag))
+
 
 ignore_words=[',','?','.','/','!']
 all_words=[stem(w) for w in all_words if w not in ignore_words]
@@ -90,6 +94,7 @@ for epoch in range(num_apochs):
 
 print(f'final Loss: {loss.item():.4f}')
 
+
 data={
     "model_state":model.state_dict(),
     "input_size":input_size,
@@ -101,5 +106,53 @@ data={
 
 FILE="TrainData.pth"
 torch.save(data,FILE)
+
+
+
+
+model.eval()
+
+with torch.no_grad():
+    correct = 0
+    total = 0
+    confusion_matrix = torch.zeros(output_size, output_size)
+
+    for (words, labels) in train_loader:
+        words = words.to(device)
+        labels = labels.to(device)
+
+        outputs = model(words)
+        _, predicted = torch.max(outputs.data, 1)
+
+        for i, j in zip(predicted, labels):
+            confusion_matrix[i, j] += 1
+
+        total += labels.size(0)
+        correct += (predicted == labels).sum().item()
+
+    accuracy = 100 * correct / total
+    
+
+    print(f'Accuracy: {accuracy:.2f}%')
+
+
+    confusion_matrix = confusion_matrix.cpu().numpy()
+with torch.no_grad():
+    y_true = []
+    y_pred = []
+
+    for (words, labels) in train_loader:
+        words = words.to(device)
+        labels = labels.to(device)
+
+        outputs = model(words)
+        _, predicted = torch.max(outputs.data, 1)
+
+        y_true.extend(labels.cpu().numpy())
+        y_pred.extend(predicted.cpu().numpy())
+
+precision, recall, f1_score, _ = precision_recall_fscore_support(y_true, y_pred, average='weighted')
+
+print(f'F1 score: {f1_score:.2f}')
 
 print(f"Training Complete file saved to{FILE}")

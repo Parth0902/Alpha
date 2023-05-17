@@ -53,8 +53,7 @@ def Main():
             if tag==intent["tag"]:
                 reply=random.choice(intent["responses"])
                 
-                if "stop" in sentence:
-                     
+                if "exit" in sentence: 
                      exit()
                 elif "time" in reply:
                     nonINputExecution(reply)
